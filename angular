@@ -1,0 +1,32 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-player-management',
+  templateUrl: './player-management.component.html',
+})
+export class PlayerManagementComponent {
+  players: any[] = []; // An array to store players
+  newPlayer: any = {}; // A new player object for adding players
+
+  // Function to add a player
+  addPlayer() {
+    // Add the new player to the players array (simulated adding to the database)
+    this.players.push(this.newPlayer);
+    // Clear the newPlayer object
+    this.newPlayer = {};
+  }
+
+  // Function to update a player (You can implement this further)
+  updatePlayer(player: any) {
+    // Implement update logic here
+  }
+
+  // Function to delete a player
+  deletePlayer(player: any) {
+    // Find the player index in the array and remove it (simulated deletion from the database)
+    const index = this.players.indexOf(player);
+    if (index !== -1) {
+      this.players.splice(index, 1);
+    }
+  }
+}
